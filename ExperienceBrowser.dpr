@@ -11,8 +11,6 @@ uses
 begin
   GlobalCEFApp                 := TCefApplication.Create;
   GlobalCEFApp.MustFreeLibrary := False;
-  GlobalCEFApp.FrameworkDirPath     := 'cef';
-  GlobalCEFApp.ResourcesDirPath     := 'cef';
   GlobalCEFApp.LocalesDirPath       := 'cef\locales';
   GlobalCEFApp.EnableGPU            := True;      // Enable hardware acceleration
   GlobalCEFApp.cache                := 'cef\cache';
