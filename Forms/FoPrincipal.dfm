@@ -11,6 +11,7 @@ object FormPrincipal: TFormPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MenuPrincipal
+  OnClose = FormClose
   TextHeight = 15
   object GbPrincipal: TGroupBox
     Left = 0
