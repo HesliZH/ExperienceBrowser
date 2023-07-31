@@ -12,6 +12,7 @@ object FormPrincipal: TFormPrincipal
   Font.Style = []
   Menu = MenuPrincipal
   OnClose = FormClose
+  OnShow = FormShow
   TextHeight = 15
   object GbPrincipal: TGroupBox
     Left = 0
@@ -40,13 +41,14 @@ object FormPrincipal: TFormPrincipal
       TabOrder = 0
     end
     object BtIr: TButton
-      Left = 1149
+      Left = 1148
       Top = 31
       Width = 75
       Height = 25
       Anchors = [akTop, akRight]
       Caption = 'Ir'
       TabOrder = 1
+      OnClick = BtIrClick
     end
   end
   object PgPrincipal: TPageControl
@@ -91,6 +93,7 @@ object FormPrincipal: TFormPrincipal
       Caption = 'Ferramentas de desenvolvedor'
       object MnAbrirDevTools: TMenuItem
         Caption = 'Ativar DevTools'
+        OnClick = MnAbrirDevToolsClick
       end
     end
   end

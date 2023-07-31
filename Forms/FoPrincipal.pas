@@ -25,6 +25,9 @@ type
     ChromiumBase: TChromium;
     ChromiumWindowBase: TChromiumWindow;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
+    procedure MnAbrirDevToolsClick(Sender: TObject);
+    procedure BtIrClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,10 +41,25 @@ implementation
 
 {$R *.dfm}
 
+procedure TFormPrincipal.BtIrClick(Sender: TObject);
+begin
+  ChromiumBase.LoadURL(EdUrl.Text);
+end;
+
 procedure TFormPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
    if Assigned(GlobalCEFApp) then
      FreeAndNil(GlobalCEFApp);
+end;
+
+procedure TFormPrincipal.FormShow(Sender: TObject);
+begin
+  ChromiumBase.CreateBrowser(ChromiumWindowBase);
+end;
+
+procedure TFormPrincipal.MnAbrirDevToolsClick(Sender: TObject);
+begin
+  ChromiumBase.ShowDevTools(Mouse.CursorPos);
 end;
 
 end.
